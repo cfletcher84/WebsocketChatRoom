@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fletchers Chat</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js" integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">Fletchers Chat</span>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1 id="welcome-banner">Hello and welcome to Fletchers Chat!</h1>
+            </div>
+        </div>
+        <div class="row" id="usernameRow">
+            <div class="col">
+                <div class="card p-3 bg-dark form-floating" >
+                    <form id="username-form">
+                        <input type="text" class="form-control" placeholder="Enter Username" id="username">
+                        <button type="submit" class="btn btn-outline-info w-100 mt-2">Enter Username</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row bg-dark" id="messageRow" style="display:none">
+            <div class="col">
+                <div class="card text-bg-dark mb-3">
+                    <div class="card-header bg-dark">Messages</div>
+                    <ul class="list-group list-group-flush" id="messages">
+                        
+                    </ul>
+                    <div class="card-footer">
+                        <form id="send-chat">
+                            <input type="text" class="form-control" placeholder="Enter Chat" id="message" name="message">
+                            <button type="submit" class="btn btn-outline-info w-100 mt-2">Send</button>    
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
